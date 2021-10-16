@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="requests">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="request" maxOccurs="unbounded" minOccurs="0">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="passport">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <!--VALIDITY (Годный до, дата)-->
+                                        <xs:element name="validity">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:date">
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                        <!--ISSUED BY (Кем выдан, 4 цифры)-->
+                                        <xs:element name="issued_by">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                    <xs:length value="4"/>
+                                                    <xs:pattern value="[0-9][0-9][0-9][0-9]"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                        <!--RNTRC (Десять цифр с обратной стороны пасспорта)-->
+                                        <xs:element name="RNTRC">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                    <xs:length value="10"/>
+                                                    <xs:pattern value="[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                        <!--ISSUED DATA (Дата выдачи)-->
+                                        <xs:element name="data">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:date">
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                    <!--PASSPORT NUMBER (Номер паспорта)-->
+                                    <xs:attribute type="xs:string" name="serial_number" use="required"/>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="person">
+                                <xs:complexType>
+                                    <xs:all>
+                                        <!--SURNAME (Фамилия)-->
+                                        <xs:element name="surname">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                    <xs:maxLength value="20"/>
+                                                    <xs:minLength value="5"/>
+                                                    <xs:whiteSpace value="replace"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                        <!--FIRST NAME (Имя)-->
+                                        <xs:element name="first_name">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                    <xs:maxLength value="20"/>
+                                                    <xs:minLength value="5"/>
+                                                    <xs:whiteSpace value="replace"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                        <!--LAST NAME (Отчество)-->
+                                        <xs:element name="last_name">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                    <xs:maxLength value="20"/>
+                                                    <xs:minLength value="5"/>
+                                                    <xs:whiteSpace value="replace"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                        <!--ADDRESS (Адрес)-->
+                                        <xs:element name="address">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                    <xs:maxLength value="40"/>
+                                                    <xs:minLength value="5"/>
+                                                    <xs:whiteSpace value="replace"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                        <!--GENDER (Пол)-->
+                                        <xs:element name="gender">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                    <xs:enumeration value="Male"/>
+                                                    <xs:enumeration value="Female"/>
+                                                    <xs:enumeration value="М"/>
+                                                    <xs:enumeration value="Ж"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                        <!--BIRTHDAY (Дата рождения)-->
+                                        <xs:element name="date">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:date">
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                        <!--NATIONALITY (Национальность)-->
+                                        <xs:element name="nationality">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                    <xs:enumeration value="UA"/>
+                                                    <xs:enumeration value="RU"/>
+                                                    <xs:enumeration value="ENG"/>
+                                                    <xs:enumeration value="USA"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                    </xs:all>
+                                    <!--IDENTIFICATION_NUMBER (Идентификационный код, много цифр)-->
+                                    <xs:attribute type="xs:string" name="identification_number" use="required"/>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="worker">
+                                <xs:complexType>
+                                    <xs:choice>
+                                        <!--POST (Должность работника)-->
+                                        <xs:element name="post">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                    <xs:whiteSpace value="replace"/>
+                                                    <xs:minLength value="5"/>
+                                                    <xs:maxLength value="20"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                        <!--SURNAME (Фамилия работника)-->
+                                        <xs:element name="surname">
+                                            <xs:simpleType>
+                                                <xs:restriction base="xs:string">
+                                                    <xs:whiteSpace value="replace"/>
+                                                    <xs:minLength value="5"/>
+                                                    <xs:maxLength value="20"/>
+                                                </xs:restriction>
+                                            </xs:simpleType>
+                                        </xs:element>
+                                    </xs:choice>
+                                    <xs:attribute type="xs:int" name="worker_id" default="0"/>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                        <!--ID (Номер заявки)-->
+                        <xs:attribute type="xs:int" name="id" default="0" />
+                        <!--PAID (Статус: оплачено \ не оплачено)-->
+                        <xs:attribute type="xs:boolean" name="paid" use="optional"/>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
+

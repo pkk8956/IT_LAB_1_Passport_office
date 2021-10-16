@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type='text/xsl' href='ex01-1.xsl'?>
+<requests>
+    <request id ="1" paid = "true">
+        <passport serial_number="1351513">
+            <validity>2032-05-23</validity>
+            <issued_by>6355</issued_by>
+            <RNTRC>1234567890</RNTRC>
+            <data>2022-09-23</data>
+        </passport>
+        <person identification_number ="8875426859">
+            <surname>Чернишенко</surname>
+            <first_name>Олександр</first_name>
+            <nationality>UA</nationality>
+            <last_name>Володимирович</last_name>
+            <address>Провулок Криничний 8</address>
+            <gender>М</gender>
+            <date>2000-08-11</date>
+        </person>
+        <worker worker_id ="4">
+            <post>Помощник</post>
+        </worker>
+    </request>
+    <request id ="2" >
+        <passport serial_number="28132168">
+            <validity>2032-05-23</validity>
+            <issued_by>1582</issued_by>
+            <RNTRC>8543957523</RNTRC>
+            <data>2022-09-23</data>
+        </passport>
+        <person identification_number ="865543442145641">
+            <surname>Тарасенко</surname>
+            <first_name>Денис</first_name>
+            <nationality>USA</nationality>
+            <last_name>Петрович</last_name>
+            <address>Балаклея</address>
+            <gender>М</gender>
+            <date>2000-08-11</date>
+        </person>
+        <worker worker_id ="5">
+            <post>Главный работник</post>
+        </worker>
+    </request>
+	<request id ="3" paid = "true">
+        <passport serial_number="28132168">
+            <validity>2032-05-23</validity>
+            <issued_by>1582</issued_by>
+            <RNTRC>8543957523</RNTRC>
+            <data>2022-09-23</data>
+        </passport>
+        <person identification_number ="4313843153445">
+            <surname>Веснянка</surname>
+            <first_name>Владислав</first_name>
+            <nationality>USA</nationality>
+            <last_name>Олександрович</last_name>
+            <address>Балаклея</address>
+            <gender>М</gender>
+            <date>2000-08-11</date>
+        </person>
+        <worker worker_id ="5">
+            <post>Главный работник</post>
+        </worker>
+    </request>
+	<request id ="4" paid = "true">
+        <passport serial_number="28132168">
+            <validity>2032-05-23</validity>
+            <issued_by>1582</issued_by>
+            <RNTRC>8543957523</RNTRC>
+            <data>2022-09-23</data>
+        </passport>
+        <person identification_number ="6846848468411">
+            <surname>Тищенко</surname>
+            <first_name>Олексій</first_name>
+            <nationality>USA</nationality>
+            <last_name>Андрійович</last_name>
+            <address>Балаклея</address>
+            <gender>М</gender>
+            <date>2000-08-11</date>
+        </person>
+        <worker worker_id ="5">
+            <post>Главный работник</post>
+        </worker>
+    </request>
+</requests>
