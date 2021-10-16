@@ -11,7 +11,7 @@ import javax.xml.validation.Validator;
 
 import org.xml.sax.SAXException;
 
-public class AgainstValidator {
+public class ValidatorByXSD {
 
 	public static boolean main(String[] args) throws Exception {
 		if (args.length != 2) {
@@ -31,7 +31,7 @@ public class AgainstValidator {
 			schema = sf.newSchema(new File(xsd));
 		}
 		
-		Validator validator = schema.newValidator();
+		javax.xml.validation.Validator validator = schema.newValidator();
 		Source source = new StreamSource(xml);
 
 		try {
@@ -43,7 +43,6 @@ public class AgainstValidator {
 			System.out.println(ex.getMessage());
 			return false;
 		}
-
 	}
 
 	private static void usage() {

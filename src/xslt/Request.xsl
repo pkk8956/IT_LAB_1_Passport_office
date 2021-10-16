@@ -123,7 +123,6 @@
                 </xsl:for-each>
                 <hr color="red"/>
             </xsl:if>
-
         </xsl:for-each>
     </xsl:template>
 </xsl:stylesheet>
