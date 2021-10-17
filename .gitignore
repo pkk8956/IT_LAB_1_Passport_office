@@ -6,7 +6,6 @@ target/
 *.log
 *.class
 *.iml
-*.class
 .settings/
 .project
 .classpath
